@@ -22,8 +22,24 @@ function fetchUsers(){
 
 fetchUsers()
     .then((users) =>{
-        console.log('Usuários:', users); // Exibe os dados da API
+        console.log('Usuários:', users); 
+      popularUsuarios(users)
     })
     .catch((error) =>{
         console.error('Erro:', error); // Exibe o erro, se houver
         });
+
+
+
+        function popularUsuarios(users){
+            users.forEach(usuario => {
+                content.innerHTML = `
+                <p><strong>Nome:</strong> ${usuario.name}</p>
+                <p><strong>Email:</strong> ${usuario.email}</p>
+                <p><strong>Telefone:</strong> ${usuario.phone}</p>
+                <p><strong>Website:</strong> ${usuario.website}</p>
+                <p><strong>Empresa:</strong> ${usuario.company}</p>
+                
+            `
+            });
+        }
