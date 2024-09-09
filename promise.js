@@ -38,8 +38,14 @@ fetchUsers()
                 <p><strong>Email:</strong> ${usuario.email}</p>
                 <p><strong>Telefone:</strong> ${usuario.phone}</p>
                 <p><strong>Website:</strong> ${usuario.website}</p>
-                <p><strong>Empresa:</strong> ${usuario.company}</p>
+                <p><strong>Empresa:</strong> ${usuario.company.name}</p>
                 
             `
             });
         }
+
+        
+        loadUsers.onclick = (() =>{
+            resultado.innerText = somarDoisValores()
+        
+        })
